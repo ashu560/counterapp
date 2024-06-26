@@ -1,39 +1,25 @@
 import 'package:counterapp/main.dart';
 import 'package:counterapp/provider/Fev_provider.dart';
-import 'package:counterapp/screen/fev_added_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class fevAddedItem extends StatelessWidget {
+  const fevAddedItem({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final counterProvider = Provider.of<FevProvider>(context);
+    final counterProvider = Provider.of<FevProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Home page'),
-        actions: [
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const fevAddedItem(),
-                ),
-              );
-            },
-            child: const Icon(Icons.favorite),
-          ),
-        ],
+        title: const Text('Fev Tab'),
       ),
       body: Column(
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: 50,
+              itemCount: counterProvider.selectedItem.length,
               itemBuilder: (context, index) {
                 return Consumer<FevProvider>(
                   builder: (context, value, child) {
