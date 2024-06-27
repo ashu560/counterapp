@@ -1,5 +1,6 @@
 import 'package:counterapp/provider/Fev_provider.dart';
 import 'package:counterapp/screen/Fev_screen_main.dart';
+import 'package:counterapp/screen/value_notify_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: ValueNotifyListenerWidget(),
     );
   }
 }
